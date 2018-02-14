@@ -1,5 +1,7 @@
 class Message {
-    public mess: string;
+    public contenu: string;
+    public autheur: string;
+    public id: number;
     //public dateMessage: date;
     constructor(public message: string) { }
 

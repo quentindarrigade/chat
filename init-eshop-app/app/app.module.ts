@@ -12,6 +12,7 @@ import { MomentService } from './moment.service';
 import {SalonModule} from './salon/salon.module';
 import {MessageModule} from './message/message.module';
 import {HomeComponent} from './home.component';
+import {NavigationComponent} from  './navigation.component';
 
 //Configuration des routes
 const routes: Routes = [
@@ -32,7 +33,8 @@ const routes: Routes = [
 
     declarations: [
         AppComponent,
-        HomeComponent
+        HomeComponent,
+        NavigationComponent
     ],
 
     providers: [

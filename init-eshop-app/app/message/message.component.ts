@@ -9,6 +9,8 @@ import { Message } from './message';
 
 export class MessageComponent {
     private formMessage: Message = new Message("OSS117");
+    private listeClients: Array<Message> = new Array<Message>();
+
     private filtre: string = "";
     constructor(private messageService: MessageService) { }
 

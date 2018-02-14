@@ -3,16 +3,15 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpModule} from '@angular/http';
-import {SalonComponent} from './salon.component';
-import {SalonsService} from './salons.service';
-import {User} from '../user/User';
+import {UserComponent} from './user.component';
+import {UserService} from './user.service';
 
 
 //Configuration des routes
 const routes: Routes = [
 
 
-{ path: 'canal', component: SalonComponent }
+{ path: 'auth', component: UserComponent }
 // { path: 'client/:nom', component: ClientDetailComponent } ,
 
 // { path: '**', component: PageNotFoundComponent }
@@ -28,15 +27,15 @@ imports: [
   HttpModule
  ],
 declarations: [
-  SalonComponent
+  UserComponent
 
 ],
 providers: [
-  SalonsService
+  UserService
 ],
 exports: [
 
  ]
 })
 
-export class SalonModule { }
+export class UserModule { }

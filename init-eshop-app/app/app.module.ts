@@ -13,6 +13,9 @@ import {SalonModule} from './salon/salon.module';
 import {MessageModule} from './message/message.module';
 import {HomeComponent} from './home.component';
 import {NavigationComponent} from  './navigation.component';
+import {UserModule} from './user/user.module';
+import {UserService} from './user/user.service';
+import {SalonsService} from './salon/salons.service';
 
 //Configuration des routes
 const routes: Routes = [
@@ -28,7 +31,8 @@ const routes: Routes = [
         RouterModule.forRoot(routes),
         HttpModule,
         SalonModule,
-        MessageModule
+        MessageModule,
+        UserModule
     ],
 
     declarations: [
@@ -39,7 +43,9 @@ const routes: Routes = [
 
     providers: [
         AppConfigService,
-        MomentService
+        MomentService,
+        UserService,
+        SalonsService
     ],
 
     bootstrap: [ AppComponent ]

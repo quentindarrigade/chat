@@ -3,13 +3,20 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpModule} from '@angular/http';
-import {MessageComponent} from './message.component';
-import {MessageService} from './message.service';
+import {UserComponent} from './user.component';
+import {UserService} from './user.service';
+
 
 //Configuration des routes
 const routes: Routes = [
-{ path: 'message', component: MessageComponent }
+
+
+{ path: 'auth', component: UserComponent }
+// { path: 'client/:nom', component: ClientDetailComponent } ,
+
+// { path: '**', component: PageNotFoundComponent }
 ];
+
 
 
 @NgModule({
@@ -19,15 +26,16 @@ imports: [
   RouterModule.forChild(routes),
   HttpModule
  ],
-providers: [
-MessageService
- ],
 declarations: [
-MessageComponent
+  UserComponent
+
+],
+providers: [
+  UserService
 ],
 exports: [
 
  ]
 })
 
-export class MessageModule { }
+export class UserModule { }

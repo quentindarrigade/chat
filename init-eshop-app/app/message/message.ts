@@ -1,9 +1,12 @@
-class Message {
+export class Message {
     public contenu: string;
     public autheur: string;
     public id: number;
-    //public dateMessage: date;
-    constructor(public message: string) { }
+    public date: string;
+
+    constructor(contenu?: string) {
+      this.contenu=contenu;
+     }
 
     // public getNom(): string {
     //     return this.prenom + " " + this.nom;

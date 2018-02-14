@@ -1,8 +1,8 @@
 export class Salon {
   public nom: string;
   public id: number=0;
-  public proprietaire: string;
-  public messages: Array<string>;
+  public proprietaire: User;
+  public messages: Array<Message>;
   public isVisible: boolean=false;
 
   constructor( nom?:string){

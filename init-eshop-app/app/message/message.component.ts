@@ -8,32 +8,39 @@ import { Message } from './message';
 })
 
 export class MessageComponent {
-    private formMessage: Message = new Message("OSS117");
+    private message: Message = new Message();
     private listeClients: Array<Message> = new Array<Message>();
 
     private filtre: string = "";
     constructor(private messageService: MessageService) { }
 
-    public addMessage() {
-        this.messageService.save(this.formMessage);
-        //this.clientService.refresh();
-        this.formMessage = new Message("", "");
-    }
+    public listerMessageAll() {
+        return this.messageService.findAllMessage("13022018111008")
+       }
 
+    // public listerMessageDate() {
+    //     return this.messageService.findAllMessageDate("14022018111008")
+    //    }
 
-    public filtrer() {
-        return this.messageService.findAll().filter(c =>
-            c.nom.toLowerCase().indexOf(this.filtre.toLowerCase()) !== -1 ||
-            c.prenom.toLowerCase().indexOf(this.filtre.toLowerCase()) !== -1
-        );
-    }
+       // public addMessage() {
+       //     this.messageService.save(this.formMessage);
+       //     //this.clientService.refresh();
+       //     this.formMessage = new Message("", "");
+       // }
 
-
-    public editer(message: Message) {
-        this.formMessage = message;
-    }
-
-    public supprimer(message:Message) {
-        this.messageService.delete(message);
-    }
+// public filtrer() {
+//     return this.messageService.findAll().filter(c =>
+//        c.nom.toLowerCase().indexOf(this.filtre.toLowerCase()) !== -1 ||
+//        c.prenom.toLowerCase().indexOf(this.filtre.toLowerCase()) !== -1
+//     );
+//    }
+    //
+    //
+    // public editer(message: Message) {
+    //     this.formMessage = message;
+    // }
+    //
+    // public supprimer(message:Message) {
+    //     this.messageService.delete(message);
+    // }
 }

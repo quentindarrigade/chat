@@ -5,6 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HttpModule} from '@angular/http';
 import {SalonComponent} from './salon.component';
 import {SalonsService} from './salons.service';
+import {User} from '../user/User';
 
 
 //Configuration des routes

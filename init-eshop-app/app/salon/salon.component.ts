@@ -35,12 +35,17 @@ export class SalonComponent{
     this.isVisible=false;
 
   }
+
+  public rejoindre(salon: Salon) {
+    this.service.findById(salon);
+  }
   public ajouter() {
 
     var nom = this.salonDefaut.nom;
     var id = this.salonDefaut.id;
     var salon8: Salon=new Salon(nom);
     salon8.id=id;
+
 
     this.service.save(salon8);
     // for (let client of this.service.findAll()) {

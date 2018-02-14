@@ -6,6 +6,7 @@ import {AppConfigService}  from '../app-config.service';
 @Injectable()
 export class MessageService {
     private listeMessages: Array<Message>;
+    private message: Message =new Message();
 
     constructor(private appConfig: AppConfigService, private http: Http) {
 
@@ -17,45 +18,73 @@ export class MessageService {
     //     .subscribe(resp => this.clients = resp.json());
     // }
 
-    public findAll() {
+    public findAllMessage(date: string) {
+    //public date: "14022018111109";
       if (this.listeMessages == null) {
       this.http
-      .get(this.appConfig.uri + "/canal/1")
+      .get(this.appConfig.uri + "/canal/message/" + date)
       .subscribe(resp => this.listeMessages = resp.json());
         //return this.clients;
-      return new Array<Message>();
+      this.listeMessages = new Array<Message>();
     }
-    else {
-        return this.listeMessages;
-    }
+    return this.listeMessages;
   }
 
 
-    public findById(id: number) {
-      this.http
-      .post(this.appConfig.uri + "/message", id)
-      .subscribe(resp => this.listeMessages = resp.json());
+  //   public findAllMessageDate(date: Date) {
+  //   //public date: "14022018111109";
+  //     if (this.listeMessages == null) {
+  //     this.http
+  //     .get(this.appConfig.uri + "/canal/" + date)
+  //     .subscribe(resp => this.listeMessages = resp.json());
+  //       //return this.clients;
+  //     return new Array<Message>();
+  //   }
+  //   else {
+  //       return this.listeMessages;
+  //   }
+  // }
 
-        // for (let client of this.clients) {
-        //     if (client.id == id) {
-        //         return client;
-        //     }
-        // }
-        // return null;
-    }
 
-
-    public save(message: Message) {
-this.http
-.post(this.appConfig.uri + "/message/", message)
-.subscribe(resp => this.refresh());
-
-    }
-
-    public delete(message: Message) {
-      this.http
-      .delete(this.appConfig.uri + "/message/" + message.id)
-      .subscribe(resp => this.refresh());
-
-    }
+//     public findAll() {
+//       if (this.listeMessages == null) {
+//       this.http
+//       .get(this.appConfig.uri + "/canal/1")
+//       .subscribe(resp => this.listeMessages = resp.json());
+//         //return this.clients;
+//       return new Array<Message>();
+//     }
+//     else {
+//         return this.listeMessages;
+//     }
+//   }
+//
+//
+//     public findById(id: number) {
+//       this.http
+//       .post(this.appConfig.uri + "/message", id)
+//       .subscribe(resp => this.listeMessages = resp.json());
+//
+//         // for (let client of this.clients) {
+//         //     if (client.id == id) {
+//         //         return client;
+//         //     }
+//         // }
+//         // return null;
+//     }
+//
+//
+//     public save(message: Message) {
+// this.http
+// .post(this.appConfig.uri + "/message/", message)
+// .subscribe(resp => this.refresh());
+//
+//     }
+//
+//     public delete(message: Message) {
+//       this.http
+//       .delete(this.appConfig.uri + "/message/" + message.id)
+//       .subscribe(resp => this.refresh());
+//
+//     }
 }

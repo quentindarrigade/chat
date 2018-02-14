@@ -25,4 +25,15 @@ export class SalonComponent{
 
   }
 
+  public ajouter2() {
+
+    this.isVisible=true;
+
+  }
+  public annuler() {
+    this.salonDefaut= new Salon();
+    this.isVisible=false;
+
+  }
+
    }

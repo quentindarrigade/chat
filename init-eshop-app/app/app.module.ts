@@ -10,6 +10,15 @@ import { AppConfigService } from './app-config.service';
 import { MomentService } from './moment.service';
 
 import {SalonModule} from './salon/salon.module';
+import {MessageModule} from './message/message.module';
+import {HomeComponent} from './home.component';
+
+//Configuration des routes
+const routes: Routes = [
+    { path: 'home', component: HomeComponent },
+    { path: '', redirectTo: 'home', pathMatch: 'full' },
+    // { path: '**', component: PageNotFoundComponent }
+];
 
 @NgModule({
     imports: [
@@ -17,11 +26,13 @@ import {SalonModule} from './salon/salon.module';
         FormsModule,
         RouterModule.forRoot(routes),
         HttpModule,
-        SalonModule
+        SalonModule,
+        MessageModule
     ],
 
     declarations: [
-        AppComponent
+        AppComponent,
+        HomeComponent
     ],
 
     providers: [

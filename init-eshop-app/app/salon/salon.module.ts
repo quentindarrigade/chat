@@ -26,16 +26,13 @@ imports: [
   RouterModule.forChild(routes),
   HttpModule
  ],
-providers: [
-
- ],
 declarations: [
   SalonComponent
 
 ],
 providers: [
   SalonsService
-]
+],
 exports: [
 
  ]

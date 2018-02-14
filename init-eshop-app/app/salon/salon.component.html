@@ -1,0 +1,72 @@
+<div class="container">
+
+<h1> La liste des salons</h1>
+<div class="row">
+  <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">Filtre</span>
+      </div>
+      <input type="text" class="form-control" name="libelle" [(ngModel)]="filtre" aria-describedby="basic-addon1">
+    </div>
+  </div>
+
+  <div class="row">
+<table class="table table-bordered">
+  <thead class="thead-dark">
+    <th> n°</th>
+    <th> Nom</th>
+      <th> Actions</th>
+  </thead>
+  <tr *ngIf="!isVisible">
+
+    <button id="i1" hidden="hidden"></button>
+    <label for="i1" (dblclick)="ajouter2()">Double-cliquez ici pour ajouter un salon</label>
+  </tr>
+  <tr *ngIf="isVisible">
+
+    <td><input  [(ngModel)]="salonDefaut.id"/></td>
+    <td><input  [(ngModel)]="SalonDefaut.nom"/></td>
+    <td><button (click)="ajouter()" class="btn btn-secondary"> Ajouter</button>
+    <button (click)="annuler()" class="btn btn-secondary"> Annuler</button></td>
+  <!-- <div *ngIf="isVisible">
+    <td>
+        <input value={{c.nom}} [(ngModel)]="nom"/>
+      </td>
+      </div> -->
+
+
+
+  </tr>
+
+<tr *ngFor="let s of filtrer()">
+  <td>
+    <div *ngIf="!s.isVisible">
+      {{ s.id }}
+    </div>
+    <div *ngIf="s.isVisible">
+      <input value={{s.id}} [(ngModel)]="s.id"/>
+    </div>
+    </td>
+  <td>
+    <div *ngIf="!s.isVisible">
+      {{ s.nom }}
+    </div>
+    <div *ngIf="s.isVisible">
+      <input value={{s.nom}} [(ngModel)]="s.nom"/>
+    </div></td>
+  <td>
+
+  <td>
+    <div *ngIf="!s.isVisible">
+      <button  (click)="modifier(s)" class="btn btn-secondary" >Rejoindre Salon</button>
+
+    </div>
+
+    
+
+
+  </td>
+</tr>
+</table>
+</div>
+</div>

@@ -1,0 +1,12 @@
+p {
+    transition: all 0.25s ease;
+}
+
+.negatif {
+    background: red;
+}
+
+
+.input-group-text {
+    width: 200px;
+}

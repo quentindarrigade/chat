@@ -5,9 +5,8 @@ export class Salon {
   public messages: Array<string>;
   public isVisible: boolean=false;
 
-  constructor( nom?:string,  prenom?:string){
+  constructor( nom?:string){
     this.nom=nom;
-    this.prenom=prenom;
   }
 
 

@@ -13,6 +13,7 @@ import {SalonsService} from './salons.service';
 export class SalonComponent{
   private filtre : string ="";
   private isVisible: boolean =false;
+  private salonDefaut: Salon =new Salon();
 
 
   constructor (private service: SalonsService){
@@ -21,6 +22,17 @@ export class SalonComponent{
 
   public filtrer() {
     return this.service.findAll().filter(s => s.nom.toLowerCase().indexOf(this.filtre.toLowerCase()) !== -1 );
+
+  }
+
+  public ajouter2() {
+
+    this.isVisible=true;
+
+  }
+  public annuler() {
+    this.salonDefaut= new Salon();
+    this.isVisible=false;
 
   }
 

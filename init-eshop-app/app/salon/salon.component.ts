@@ -13,6 +13,7 @@ import {SalonsService} from './salons.service';
 export class SalonComponent{
   private filtre : string ="";
   private isVisible: boolean =false;
+  private salonDefaut: Salon =new Salon();
 
 
   constructor (private service: SalonsService){

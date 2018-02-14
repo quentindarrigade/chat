@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 
 
 @Component({
-    selector: 'eshop-navigation',
+    selector: 'chat-navigation',
     templateUrl: 'app/navigation.component.html'
 })
 export class NavigationComponent { }
